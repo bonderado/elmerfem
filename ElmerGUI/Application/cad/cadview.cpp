@@ -81,6 +81,12 @@
 #include <GProp_GProps.hxx>
 #include <BRepGProp.hxx>
 
+
+// toAscii is not a vailable in newest QT5
+#if WITH_QT5
+#define toAscii toLatin1
+#endif
+
 using namespace std;
 
 static void pickEventHandler(vtkObject* caller, unsigned long eid, 
@@ -599,7 +605,7 @@ TopoDS_Shape CadView::readBrep(QString fileName)
   BRep_Builder builder;
   Standard_Boolean result;
 
-  result = BRepTools::Read(shape, fileName.toAscii().data(), builder);    
+  result = BRepTools::Read(shape, fileName.toAscii().data(), builder);
 
   if(!result)
     cout << "Read brep failed" << endl;

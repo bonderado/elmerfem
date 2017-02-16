@@ -46,6 +46,11 @@
 #include <vtkTextActor.h>
 #include <vtkTextProperty.h>
 
+// toAscii is not a vailable in newest QT5
+#if WITH_QT5
+#define toAscii toLatin1
+#endif
+
 using namespace std;
 
 Text::Text(QWidget *parent)

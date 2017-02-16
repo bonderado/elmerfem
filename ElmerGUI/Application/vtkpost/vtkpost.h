@@ -43,6 +43,11 @@
 
 #define MAX_SCALARS 100
 
+#if WITH_QT5
+#define toAscii toLatin1
+#include <QtWidgets>
+#endif
+
 #include <QMainWindow>
 #include <QHash>
 #include <QTextStream>

@@ -41,7 +41,11 @@
 #ifndef CADVIEW_H
 #define CADVIEW_H
 
-#include <QMainWindow>
+#if WITH_QT5
+  #include <QtWidgets>
+#else
+  #include <QMainWindow>
+#endif
 #include <QHash>
 
 #include "cadpreferences.h"

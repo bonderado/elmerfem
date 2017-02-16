@@ -50,6 +50,11 @@
 #include <vtkTextProperty.h>
 #include <vtkActor.h>
 
+// toAscii is not a vailable in newest QT5
+#if WITH_QT5
+#define toAscii toLatin1
+#endif
+
 using namespace std;
 
 ColorBar::ColorBar(QWidget *parent)

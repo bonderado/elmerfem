@@ -41,7 +41,12 @@
 #ifndef READEPFILE_H
 #define READEPFILE_H
 
+#if WITH_QT5
+#include <QtWidgets>
+#else
 #include <QWidget>
+#endif
+
 #include "ui_readepfile.h"
 
 class ReadEpFile : public QDialog

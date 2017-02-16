@@ -41,7 +41,12 @@
 #ifndef TIMESTEP_H
 #define TIMESTEP_H
 
+#if WITH_QT5
+#include <QtWidgets>
+#else
 #include <QWidget>
+#endif
+
 #include "ui_timestep.h"
 
 class vtkRenderWindow;
