@@ -63,7 +63,7 @@ ENDIF()
 add_executable(ElmerPost ${ElmerPost_SRCS})
 
 target_link_libraries(ElmerPost camera elements module objects visuals graphics
-  glaux ${OPENGL_LIBRARIES} ${TCL_LIBRARY} ${TK_LIBRARY} matc m)
+  glaux ${OPENGL_LIBRARIES} ${TCL_LIBRARY} ${TK_LIBRARY} matc m X11)
 
 IF(NOT(WIN32))
   SET_TARGET_PROPERTIES(ElmerPost PROPERTIES INSTALL_RPATH ${ELMERSOLVER_RPATH_STRING})
@@ -84,7 +84,7 @@ IF(NOT(WIN32))
 
   add_executable(QueryGLXExt ${QueryGLXExt_SRCS})
 
-  target_link_libraries(QueryGLXExt ${OPENGL_LIBRARIES})
+  target_link_libraries(QueryGLXExt ${OPENGL_LIBRARIES} X11)
 
   install(TARGETS QueryGLXExt DESTINATION bin)
 ENDIF(NOT(WIN32))
